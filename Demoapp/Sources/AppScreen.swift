@@ -14,29 +14,8 @@ struct DemosListView: View {
 
     var body: some View {
         List {
-
-            // Sheets, pages or navigation
-
-            Section {
-                NavigationLink(destination: SheetsDemoView()) {
-                    Label("Sheets", systemImage: "menucard.fill")
-                        .accentColor(.blue)
-                }
-            } header: {
-                Text("Sheets, navigation, ...")
-            }
-
-            // Animations
-
-            Section {
-                NavigationLink(destination: SpringAnimationsDemoView()) {
-                    Label("Spring", systemImage: "tornado")
-                        .accentColor(.orange)
-                }
-            } header: {
-                Text("Animations")
-            }
-
+            sheetsSection
+            animationsSection
             willBeAddedSoonLabel
         }
         .navigationTitle("Demoapp (:")
@@ -55,6 +34,28 @@ struct DemosListView: View {
         }
         .sheet(isPresented: $showInfosView) { InfosView() }
         .sheet(isPresented: $showSettingsView) { SettingsView() }
+    }
+
+    private var sheetsSection: some View {
+        Section {
+            NavigationLink(destination: SheetsDemoView()) {
+                Label("Sheets", systemImage: "menucard.fill")
+                    .accentColor(.blue)
+            }
+        } header: {
+            Text("Sheets, navigation, ...")
+        }
+    }
+
+    private var animationsSection: some View {
+        Section {
+            NavigationLink(destination: SpringAnimationsDemoView()) {
+                Label("Spring", systemImage: "tornado")
+                    .accentColor(.orange)
+            }
+        } header: {
+            Text("Animations")
+        }
     }
 
     private var willBeAddedSoonLabel: some View {
