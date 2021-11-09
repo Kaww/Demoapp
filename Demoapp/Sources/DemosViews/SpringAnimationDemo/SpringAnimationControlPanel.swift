@@ -3,37 +3,46 @@ import SwiftUI
 struct SpringAnimationControlPanel: View {
 
     struct AnimationType: Identifiable {
-        var id: Int
-        var name: String
+        let id: Int
+        let name: String
     }
 
+    // MARK: - Parameters
+
     @Binding var response: Double
+    @Binding var damping: Double
+    @Binding var blend: Double
+    @Binding var selectedAnimationType: AnimationType.ID
+    let animationTypes: [AnimationType]
+
+    // MARK: - Private properties
+
+    // Response
     private let minResponse: Double = 0
     private let maxResponse: Double = 2.5
     private let responseStep: Double = 0.1
     @State private var customResponse: Double? = nil
 
-    @Binding var damping: Double
+    // Damping
     private let minDamping: Double = 0
     private let maxDamping: Double = 2
     private let dampingStep: Double = 0.1
     @State private var customDamping: Double? = nil
 
-    @Binding var blend: Double
+    // Blend
     private let minBlend: Double = 0
     private let maxBlend: Double = 2.5
     private let blendStep: Double = 0.1
     @State private var customBlend: Double? = nil
 
     @State private var extendValues = false
-    @State private var extensionRatio: Double = 4.0
-
-    @Binding var selectedAnimationType: AnimationType.ID
-    let animationTypes: [AnimationType]
+    private let extensionRatio: Double = 4.0
 
     @State private var showSettingsView = false
     @State private var showShareView = false
     @State private var showInfosView = false
+
+    // MARK: - Body
 
     var body: some View {
         VStack {
@@ -58,13 +67,13 @@ struct SpringAnimationControlPanel: View {
         .onReceive(customBlend.publisher) { v in blend = v }
     }
 
-    // MARK: Private methods
+    // MARK: - Private methods
 
     private func extendIfNeeded(_ value: Double) -> Double {
         extendValues ? value * extensionRatio : value
     }
 
-    // MARK: Subview
+    // MARK: - Subviews
 
     private var animationTypeControl: some View {
         Picker("What is your favorite color?", selection: $selectedAnimationType) {

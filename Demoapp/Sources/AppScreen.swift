@@ -9,8 +9,13 @@ struct AppScreen: View {
 }
 
 struct DemosListView: View {
+
+    // MARK: - Private properties
+
     @State private var showInfosView = false
     @State private var showSettingsView = false
+
+    // MARK: - Body
 
     var body: some View {
         List {
@@ -35,6 +40,8 @@ struct DemosListView: View {
         .sheet(isPresented: $showInfosView) { InfosView() }
         .sheet(isPresented: $showSettingsView) { SettingsView() }
     }
+
+    // MARK: - Subbiews
 
     private var sheetsSection: some View {
         Section {

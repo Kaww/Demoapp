@@ -1,7 +1,11 @@
 import SwiftUI
 
 struct SpringAnimationsDemoView: View {
+
     typealias AnimationType = SpringAnimationControlPanel.AnimationType
+
+    // MARK: - Private properties
+
     @State private var animateScale = false
     @State private var animateMove = false
     @State private var dragOffset = CGSize.zero
@@ -16,6 +20,16 @@ struct SpringAnimationsDemoView: View {
         AnimationType(id: 1, name: "Move"),
         AnimationType(id: 2, name: "Drag")
     ]
+
+    private var springAnimation: Animation {
+        .spring(
+            response: animationResponse,
+            dampingFraction: animationDampingFraction,
+            blendDuration: animationBlendDuration
+        )
+    }
+
+    // MARK: - Body
 
     var body: some View {
         ZStack {
@@ -42,7 +56,7 @@ struct SpringAnimationsDemoView: View {
         .accentColor(.orange)
     }
 
-    // MARK: Actions
+    // MARK: - Actions
 
     private func reset() {
         animationResponse = 0.5
@@ -64,17 +78,7 @@ struct SpringAnimationsDemoView: View {
         }
     }
 
-    // MARK: Properties
-
-    private var springAnimation: Animation {
-        .spring(
-            response: animationResponse,
-            dampingFraction: animationDampingFraction,
-            blendDuration: animationBlendDuration
-        )
-    }
-
-    // MARK: Subviews
+    // MARK: - Subviews
 
     private var scaleAnimationView: some View {
         VStack {

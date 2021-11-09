@@ -10,11 +10,15 @@ import SwiftUI
 struct SpringAnimationControlPanelSettings: View {
     @Environment(\.presentationMode) var presentationMode
 
+    // MARK: - Parameters
+
     @Binding var extendValues: Bool
-    var extensionRatio: Double
+    let extensionRatio: Double
     @Binding var customResponse: Double?
     @Binding var customDamping: Double?
     @Binding var customBlend: Double?
+
+    // MARK: - Body
 
     var body: some View {
         NavigationView {
@@ -62,11 +66,13 @@ struct SpringAnimationControlPanelSettings: View {
         }
     }
 
-    let formatter: NumberFormatter = {
+    private let formatter: NumberFormatter = {
         let formatter = NumberFormatter()
         formatter.numberStyle = .decimal
         return formatter
     }()
+
+    // MARK: - Actions
 
     private func dismiss() {
         presentationMode.wrappedValue.dismiss()
