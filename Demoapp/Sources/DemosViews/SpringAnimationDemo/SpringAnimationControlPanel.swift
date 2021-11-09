@@ -11,16 +11,22 @@ struct SpringAnimationControlPanel: View {
     private let minResponse: Double = 0
     private let maxResponse: Double = 2.5
     private let responseStep: Double = 0.1
+    @State private var customResponse: Double? = nil
 
     @Binding var damping: Double
     private let minDamping: Double = 0
     private let maxDamping: Double = 2
     private let dampingStep: Double = 0.1
+    @State private var customDamping: Double? = nil
 
     @Binding var blend: Double
     private let minBlend: Double = 0
     private let maxBlend: Double = 2.5
     private let blendStep: Double = 0.1
+    @State private var customBlend: Double? = nil
+
+    @State private var extendValues = false
+    @State private var extensionRatio: Double = 4.0
 
     @Binding var selectedAnimationType: AnimationType.ID
     let animationTypes: [AnimationType]
@@ -47,6 +53,15 @@ struct SpringAnimationControlPanel: View {
             )
         }
         .padding()
+        .onReceive(customResponse.publisher) { v in response = v }
+        .onReceive(customDamping.publisher) { v in damping = v }
+        .onReceive(customBlend.publisher) { v in blend = v }
+    }
+
+    // MARK: Private methods
+
+    private func extendIfNeeded(_ value: Double) -> Double {
+        extendValues ? value * extensionRatio : value
     }
 
     // MARK: Subview
@@ -67,12 +82,16 @@ struct SpringAnimationControlPanel: View {
                 .frame(width: 80, alignment: .leading)
             Slider(
                 value: $response,
-                in: minResponse...maxResponse,
+                in: minResponse...extendIfNeeded(maxResponse),
                 step: responseStep,
                 label: { Text("Response") },
                 minimumValueLabel: { Text("") },
                 maximumValueLabel: { Text("\(response, specifier: "%.1f")") },
-                onEditingChanged: { _ in }
+                onEditingChanged: { isEditing in
+                    if isEditing {
+                        customResponse = nil
+                    }
+                }
             )
         }
     }
@@ -83,12 +102,16 @@ struct SpringAnimationControlPanel: View {
                 .frame(width: 80, alignment: .leading)
             Slider(
                 value: $damping,
-                in: minDamping...maxDamping,
+                in: minDamping...extendIfNeeded(maxDamping),
                 step: dampingStep,
                 label: { Text("Damping") },
                 minimumValueLabel: { Text("") },
                 maximumValueLabel: { Text("\(damping, specifier: "%.1f")") },
-                onEditingChanged: { _ in }
+                onEditingChanged: { isEditing in
+                    if isEditing {
+                        customDamping = nil
+                    }
+                }
             )
         }
     }
@@ -99,24 +122,28 @@ struct SpringAnimationControlPanel: View {
                 .frame(width: 80, alignment: .leading)
             Slider(
                 value: $blend,
-                in: minBlend...maxBlend,
+                in: minBlend...extendIfNeeded(maxBlend),
                 step: blendStep,
                 label: { Text("Blend") },
                 minimumValueLabel: { Text("") },
                 maximumValueLabel: { Text("\(blend, specifier: "%.1f")") },
-                onEditingChanged: { _ in }
+                onEditingChanged: { isEditing in
+                    if isEditing {
+                        customBlend = nil
+                    }
+                }
             )
         }
     }
 
     private var toolbar: some View {
         HStack {
-            Button(action: { showSettingsView = true }) {
-                Image(systemName: "gearshape")
+            Button(action: { showInfosView = true }) {
+                Image(systemName: "info.circle")
                     .font(.system(size: 22, weight: .medium))
             }
-            .sheet(isPresented: $showSettingsView) {
-                Text("Settings")
+            .sheet(isPresented: $showInfosView) {
+                Text("Infos")
             }
 
             Spacer()
@@ -131,12 +158,19 @@ struct SpringAnimationControlPanel: View {
 
             Spacer()
 
-            Button(action: { showInfosView = true }) {
-                Image(systemName: "info.circle")
+            Button(action: { showSettingsView = true }) {
+                Image(systemName: "gearshape")
                     .font(.system(size: 22, weight: .medium))
             }
-            .sheet(isPresented: $showInfosView) {
-                Text("Infos")
+            .sheet(isPresented: $showSettingsView) {
+                SpringAnimationControlPanelSettings(
+                    extendValues: $extendValues,
+                    extensionRatio: extensionRatio,
+                    customResponse: $customResponse,
+                    customDamping: $customDamping,
+                    customBlend: $customBlend
+                )
+                .accentColor(.orange)
             }
         }
         .padding(.top, 2)

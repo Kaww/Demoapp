@@ -18,6 +18,7 @@
 		596920AE2739BBA50098D092 /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 596920AD2739BBA50098D092 /* Colors.swift */; };
 		596920B02739BC500098D092 /* Colors.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 596920AF2739BC500098D092 /* Colors.xcassets */; };
 		596920B32739CE250098D092 /* SpringAnimationControlPanel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 596920B22739CE250098D092 /* SpringAnimationControlPanel.swift */; };
+		596920B5273B074A0098D092 /* SpringAnimationControlPanelSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 596920B4273B074A0098D092 /* SpringAnimationControlPanelSettings.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -33,6 +34,7 @@
 		596920AD2739BBA50098D092 /* Colors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Colors.swift; sourceTree = "<group>"; };
 		596920AF2739BC500098D092 /* Colors.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Colors.xcassets; sourceTree = "<group>"; };
 		596920B22739CE250098D092 /* SpringAnimationControlPanel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpringAnimationControlPanel.swift; sourceTree = "<group>"; };
+		596920B4273B074A0098D092 /* SpringAnimationControlPanelSettings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpringAnimationControlPanelSettings.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -116,6 +118,7 @@
 			children = (
 				5956BD34273819870085F0B0 /* SpringAnimationsDemoView.swift */,
 				596920B22739CE250098D092 /* SpringAnimationControlPanel.swift */,
+				596920B4273B074A0098D092 /* SpringAnimationControlPanelSettings.swift */,
 			);
 			path = SpringAnimationDemo;
 			sourceTree = "<group>";
@@ -198,6 +201,7 @@
 				596920AE2739BBA50098D092 /* Colors.swift in Sources */,
 				5956BD332738195E0085F0B0 /* SheetsDemoView.swift in Sources */,
 				5956BD35273819870085F0B0 /* SpringAnimationsDemoView.swift in Sources */,
+				596920B5273B074A0098D092 /* SpringAnimationControlPanelSettings.swift in Sources */,
 				5923507D273808D200EC2AAD /* DemoappApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

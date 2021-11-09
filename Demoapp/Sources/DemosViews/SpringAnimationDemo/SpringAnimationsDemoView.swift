@@ -18,16 +18,17 @@ struct SpringAnimationsDemoView: View {
     ]
 
     var body: some View {
-        VStack {
+        ZStack {
             switch selectedAnimationType {
             case 0: scaleAnimationView.transition(.opacity.animation(.linear(duration:  0.2)))
             case 1: moveAnimationView.transition(.opacity.animation(.linear(duration:  0.2)))
             case 2: dragAnimationView.transition(.opacity.animation(.linear(duration:  0.2)))
             default: Text("Nothing here...")
             }
+
+            controlPanel
         }
         .frame(maxWidth: .infinity, maxHeight: .infinity)
-        .overlay(controlPanel)
         .navigationTitle("Spring animations")
         .navigationBarTitleDisplayMode(.inline)
         .toolbar {
@@ -136,6 +137,7 @@ struct SpringAnimationsDemoView: View {
             stopAnimation()
             print("Show DRAG animation")
         }
+        .zIndex(1)
     }
 
     private var tapScaleBackground: some View {
