@@ -3,9 +3,9 @@
 - [ ] Configurations
 
 ## 🚀 What's about ?
-    -
+...
 
 ## 📝 Proposed Changes
-    -
-    -
-    -
+- 
+- 
+-
