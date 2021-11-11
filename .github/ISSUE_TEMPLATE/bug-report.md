@@ -1,7 +1,7 @@
 ---
 name: "\U0001F4A5 BUG REPORT"
 about: Create a report to help us improve the app
-title: BUG - ...
+title: "\U0001F4A5 BUG - ..."
 labels: bug
 assignees: Kaww
 

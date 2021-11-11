@@ -1,7 +1,7 @@
 ---
 name: "\U0001F680 FEATURE REQUEST"
 about: Suggest an idea for this project
-title: FEATURE REQUEST - ...
+title: "\U0001F680 FEATURE REQUEST - ..."
 labels: enhancement
 assignees: Kaww
 
