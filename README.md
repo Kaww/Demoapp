@@ -4,7 +4,7 @@ _Work in progress..._
 
 ## 👀 What's about?
 
-It's n app built in SwiftUI that will help UI/UX designers and iOS developpers to work together smoothly. It will also help people learning about iOS capabilities, limitations, ecosystem, etc by allowing them to maninulate these features.
+It's an app built in SwiftUI that will help UI/UX designers and iOS developpers to work together smoothly. It will also help people learning about iOS capabilities, limitations, ecosystem, etc by allowing them to maninulate these features.
 
 - List several iOS capabilities.
 - Allows people to discover and manipulate these features. (e.g. spring animations, with sliders to manipulate parameters)
