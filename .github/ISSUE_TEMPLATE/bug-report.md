@@ -1,5 +1,5 @@
 ---
-name: BUG REPORT
+name: 💥 BUG REPORT
 about: Create a report to help us improve the app
 title: ''
 labels: bug
