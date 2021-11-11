@@ -1,5 +1,5 @@
 ---
-name: FEATURE REQUEST
+name: 🚀 FEATURE REQUEST
 about: Suggest an idea for this project
 title: ''
 labels: enhancement
