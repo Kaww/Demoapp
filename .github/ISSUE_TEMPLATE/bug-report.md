@@ -1,7 +1,7 @@
 ---
-name: 💥 BUG REPORT
+name: "\U0001F4A5 BUG REPORT"
 about: Create a report to help us improve the app
-title: ''
+title: BUG - ...
 labels: bug
 assignees: Kaww
 
