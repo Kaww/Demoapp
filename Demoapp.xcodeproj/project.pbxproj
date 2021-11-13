@@ -19,6 +19,7 @@
 		596920B02739BC500098D092 /* Colors.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 596920AF2739BC500098D092 /* Colors.xcassets */; };
 		596920B32739CE250098D092 /* SpringAnimationControlPanel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 596920B22739CE250098D092 /* SpringAnimationControlPanel.swift */; };
 		596920B5273B074A0098D092 /* SpringAnimationControlPanelSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 596920B4273B074A0098D092 /* SpringAnimationControlPanelSettings.swift */; };
+		59B4C381274026C4004D3C19 /* SpringAnimationControlPanelInfos.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59B4C380274026C4004D3C19 /* SpringAnimationControlPanelInfos.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -35,6 +36,7 @@
 		596920AF2739BC500098D092 /* Colors.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Colors.xcassets; sourceTree = "<group>"; };
 		596920B22739CE250098D092 /* SpringAnimationControlPanel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpringAnimationControlPanel.swift; sourceTree = "<group>"; };
 		596920B4273B074A0098D092 /* SpringAnimationControlPanelSettings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpringAnimationControlPanelSettings.swift; sourceTree = "<group>"; };
+		59B4C380274026C4004D3C19 /* SpringAnimationControlPanelInfos.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpringAnimationControlPanelInfos.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -119,6 +121,7 @@
 				5956BD34273819870085F0B0 /* SpringAnimationsDemoView.swift */,
 				596920B22739CE250098D092 /* SpringAnimationControlPanel.swift */,
 				596920B4273B074A0098D092 /* SpringAnimationControlPanelSettings.swift */,
+				59B4C380274026C4004D3C19 /* SpringAnimationControlPanelInfos.swift */,
 			);
 			path = SpringAnimationDemo;
 			sourceTree = "<group>";
@@ -198,6 +201,7 @@
 				5956BD3927381A470085F0B0 /* InfosView.swift in Sources */,
 				5956BD37273819EE0085F0B0 /* SettingsView.swift in Sources */,
 				5923507F273808D200EC2AAD /* AppScreen.swift in Sources */,
+				59B4C381274026C4004D3C19 /* SpringAnimationControlPanelInfos.swift in Sources */,
 				596920AE2739BBA50098D092 /* Colors.swift in Sources */,
 				5956BD332738195E0085F0B0 /* SheetsDemoView.swift in Sources */,
 				5956BD35273819870085F0B0 /* SpringAnimationsDemoView.swift in Sources */,

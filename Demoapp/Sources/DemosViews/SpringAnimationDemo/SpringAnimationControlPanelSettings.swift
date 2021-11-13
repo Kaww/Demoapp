@@ -1,10 +1,3 @@
-//
-//  SpringAnimationControlPanelSettings.swift
-//  Demoapp
-//
-//  Created by KAWRANTIN LE GOFF on 09/11/2021.
-//
-
 import SwiftUI
 
 struct SpringAnimationControlPanelSettings: View {

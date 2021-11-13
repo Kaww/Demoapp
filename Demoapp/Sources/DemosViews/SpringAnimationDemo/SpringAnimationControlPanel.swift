@@ -73,6 +73,18 @@ struct SpringAnimationControlPanel: View {
         extendValues ? value * extensionRatio : value
     }
 
+    private func showShareSheet() {
+        let codeSample = """
+Animation.spring(
+    response: \(String(format: "%.2f", response)),
+    dampingFraction: \(String(format: "%.2f", damping)),
+    blendDuration: \(String(format: "%.2f", blend))
+)
+"""
+        let activityViewController = UIActivityViewController(activityItems: [codeSample], applicationActivities: nil)
+        UIApplication.shared.windows.first?.rootViewController?.present(activityViewController, animated: true, completion: nil)
+    }
+    
     // MARK: - Subviews
 
     private var animationTypeControl: some View {
@@ -95,7 +107,7 @@ struct SpringAnimationControlPanel: View {
                 step: responseStep,
                 label: { Text("Response") },
                 minimumValueLabel: { Text("") },
-                maximumValueLabel: { Text("\(response, specifier: "%.1f")") },
+                maximumValueLabel: { Text("\(response, specifier: "%.2f")") },
                 onEditingChanged: { isEditing in
                     if isEditing {
                         customResponse = nil
@@ -115,7 +127,7 @@ struct SpringAnimationControlPanel: View {
                 step: dampingStep,
                 label: { Text("Damping") },
                 minimumValueLabel: { Text("") },
-                maximumValueLabel: { Text("\(damping, specifier: "%.1f")") },
+                maximumValueLabel: { Text("\(damping, specifier: "%.2f")") },
                 onEditingChanged: { isEditing in
                     if isEditing {
                         customDamping = nil
@@ -135,7 +147,7 @@ struct SpringAnimationControlPanel: View {
                 step: blendStep,
                 label: { Text("Blend") },
                 minimumValueLabel: { Text("") },
-                maximumValueLabel: { Text("\(blend, specifier: "%.1f")") },
+                maximumValueLabel: { Text("\(blend, specifier: "%.2f")") },
                 onEditingChanged: { isEditing in
                     if isEditing {
                         customBlend = nil
@@ -152,17 +164,15 @@ struct SpringAnimationControlPanel: View {
                     .font(.system(size: 22, weight: .medium))
             }
             .sheet(isPresented: $showInfosView) {
-                Text("Infos")
+                SpringAnimationControlPanelInfos()
+                    .accentColor(.orange)
             }
 
             Spacer()
 
-            Button(action: { showShareView = true }) {
+            Button(action: showShareSheet) {
                 Image(systemName: "square.and.arrow.up")
                     .font(.system(size: 22, weight: .medium))
-            }
-            .sheet(isPresented: $showShareView) {
-                Text("Share")
             }
 
             Spacer()
