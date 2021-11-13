@@ -10,6 +10,7 @@ struct SpringAnimationControlPanelSettings: View {
     @Binding var customResponse: Double?
     @Binding var customDamping: Double?
     @Binding var customBlend: Double?
+    let reset: () -> Void
 
     // MARK: - Body
 
@@ -41,6 +42,10 @@ struct SpringAnimationControlPanelSettings: View {
                         .keyboardType(.decimalPad)
                 } header: {
                     Text("Custom blend duration:")
+                }
+
+                Button(action: reset) {
+                    Label("Reset all values", systemImage: "arrow.counterclockwise")
                 }
             }
             .navigationTitle("Settings")
@@ -79,7 +84,8 @@ struct SpringAnimationControlPanelSettings_Previews: PreviewProvider {
             extensionRatio: 4.0,
             customResponse: .constant(nil),
             customDamping: .constant(4.8),
-            customBlend: .constant(nil)
+            customBlend: .constant(nil),
+            reset: {}
         )
     }
 }

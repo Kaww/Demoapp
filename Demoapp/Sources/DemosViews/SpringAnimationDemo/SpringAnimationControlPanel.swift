@@ -84,11 +84,21 @@ Animation.spring(
         let activityViewController = UIActivityViewController(activityItems: [codeSample], applicationActivities: nil)
         UIApplication.shared.windows.first?.rootViewController?.present(activityViewController, animated: true, completion: nil)
     }
+
+    private func reset() {
+        response = 0.5
+        customResponse = nil
+        damping = 0.5
+        customDamping = nil
+        blend = 0
+        customBlend = nil
+        extendValues = false
+    }
     
     // MARK: - Subviews
 
     private var animationTypeControl: some View {
-        Picker("What is your favorite color?", selection: $selectedAnimationType) {
+        Picker("Select the animation type", selection: $selectedAnimationType) {
             ForEach(animationTypes) { type in
                 Text(type.name).tag(type.id)
             }
@@ -187,7 +197,8 @@ Animation.spring(
                     extensionRatio: extensionRatio,
                     customResponse: $customResponse,
                     customDamping: $customDamping,
-                    customBlend: $customBlend
+                    customBlend: $customBlend,
+                    reset: reset
                 )
                 .accentColor(.orange)
             }

@@ -8,6 +8,7 @@ struct SpringAnimationsDemoView: View {
 
     @State private var animateScale = false
     @State private var animateMove = false
+    @State private var animateRotation = false
     @State private var dragOffset = CGSize.zero
 
     @State private var selectedAnimationType: AnimationType.ID = 1
@@ -18,7 +19,8 @@ struct SpringAnimationsDemoView: View {
     private let animationTypes = [
         AnimationType(id: 0, name: "Scale"),
         AnimationType(id: 1, name: "Move"),
-        AnimationType(id: 2, name: "Drag")
+        AnimationType(id: 2, name: "Rotation"),
+        AnimationType(id: 3, name: "Ball")
     ]
 
     private var springAnimation: Animation {
@@ -36,7 +38,8 @@ struct SpringAnimationsDemoView: View {
             switch selectedAnimationType {
             case 0: scaleAnimationView.transition(.opacity.animation(.linear(duration:  0.2)))
             case 1: moveAnimationView.transition(.opacity.animation(.linear(duration:  0.2)))
-            case 2: dragAnimationView.transition(.opacity.animation(.linear(duration:  0.2)))
+            case 2: rotationAnimationView.transition(.opacity.animation(.linear(duration:  0.2)))
+            case 3: dragAnimationView.transition(.opacity.animation(.linear(duration:  0.2)))
             default: Text("Nothing here...")
             }
 
@@ -48,7 +51,7 @@ struct SpringAnimationsDemoView: View {
         .toolbar {
             ToolbarItemGroup(placement: .navigationBarTrailing) {
                 Button(action: stopAnimation) {
-                    Label("Reset", systemImage: "arrow.counterclockwise")
+                    Label("Stop animation", systemImage: "arrow.counterclockwise")
                         .font(.system(size: 18, weight: .medium))
                 }
             }
@@ -58,22 +61,18 @@ struct SpringAnimationsDemoView: View {
 
     // MARK: - Actions
 
-    private func reset() {
-        animationResponse = 0.5
-        animationDampingFraction = 0.5
-        animationBlendDuration = 0
-    }
-
     private func stopAnimation() {
         withAnimation(.easeInOut(duration: 0.5)) {
             animateScale.toggle()
             animateMove.toggle()
+            animateRotation.toggle()
             dragOffset = .init(width: 0, height: 1)
         }
 
         withAnimation(.easeInOut(duration: 0.1)) {
             animateScale = false
             animateMove = false
+            animateRotation = false
             dragOffset = .zero
         }
     }
@@ -111,6 +110,24 @@ struct SpringAnimationsDemoView: View {
         .onAppear {
             stopAnimation()
             print("Show MOVE animation")
+        }
+    }
+
+    private var rotationAnimationView: some View {
+        VStack {
+            Capsule(style: .circular)
+                .frame(width: 200, height: 100)
+                .foregroundColor(.accentColor)
+                .rotationEffect(animateRotation ? .degrees(30) : .degrees(-30))
+
+            Spacer()
+        }
+        .frame(maxWidth: .infinity, maxHeight: .infinity)
+        .padding(.top, 80)
+        .background(tapRotationBackground)
+        .onAppear {
+            stopAnimation()
+            print("Show ROTATION animation")
         }
     }
 
@@ -160,6 +177,16 @@ struct SpringAnimationsDemoView: View {
             .onTapGesture {
                 withAnimation(springAnimation) {
                     animateMove.toggle()
+                }
+            }
+    }
+
+    private var tapRotationBackground: some View {
+        Color.clear
+            .contentShape(Rectangle())
+            .onTapGesture {
+                withAnimation(springAnimation) {
+                    animateRotation.toggle()
                 }
             }
     }
