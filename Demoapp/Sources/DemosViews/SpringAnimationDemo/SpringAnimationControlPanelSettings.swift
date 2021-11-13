@@ -58,9 +58,6 @@ struct SpringAnimationControlPanelSettings: View {
                     }
                 }
             }
-            .onTapGesture {
-                hideKeyboard()
-            }
         }
     }
 
@@ -89,11 +86,3 @@ struct SpringAnimationControlPanelSettings_Previews: PreviewProvider {
         )
     }
 }
-
-#if canImport(UIKit)
-private extension View {
-    func hideKeyboard() {
-        UIApplication.shared.sendAction(#selector(UIResponder.resignFirstResponder), to: nil, from: nil, for: nil)
-    }
-}
-#endif
