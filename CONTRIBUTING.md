@@ -22,14 +22,21 @@
 ## Open pull requests
 
 - Please follow the template or be as clear as possible
+- PR titles should be prefixed by a tag describing the subject of the PR:
+    - For a new feature: `FEATURE - {Your feature name}`
+    - For a bug or a crash fix: `FIX - {Your fix name}`
+    - For a configuration (gist or app): `CONFIG - {Your config}`
+    - In any other case:
+        - Be as clear as possible
+        - If needed, fill an issue with a request to update this document or these rules
 
 
-## Branch name
+## Branch names
 
-Branch name should be prefixed by a tag describing the subject of the branch :
+Branch name should be prefixed by a tag describing the subject of the branch:
 - For a new feature: `feature/{your-feature-name}`. E.g.  `feature/settings-view`
-- For a bug or a crash fix: `fix/{your-fix-name}`. E.g. `fix/xcode-warning-on-spring-animations-view`
-- For a configuration (gist or app): `config/{your-branch-name}`. E.g. `config/setup-github-actions`
-- In any other case :
+- For a bug or a crash fix: `fix/{your-fix-name}`
+- For a configuration (gist or app): `config/{your-branch-name}`
+- In any other case:
     - Be as clear as possible
     - If needed, fill an issue with a request to update this document or these rules
