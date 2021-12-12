@@ -1,7 +1,7 @@
 import SwiftUI
 
 struct SheetsView: View {
-    
+
     var body: some View {
         List {
             DefaultSheets()
