@@ -23,7 +23,7 @@ struct DemosListView: View {
             animationsSection
             willBeAddedSoonLabel
         }
-        .navigationTitle("Demoapp (:")
+        .navigationTitle(Text("Demoapp (:"))
         .toolbar {
             ToolbarItemGroup(placement: .navigationBarLeading) {
                 Button(action: { showInfosView = true }) {
@@ -45,8 +45,8 @@ struct DemosListView: View {
 
     private var sheetsSection: some View {
         Section {
-            NavigationLink(destination: SheetsDemoView()) {
-                Label("Sheets", systemImage: "menucard.fill")
+            NavigationLink(destination: SheetsView()) {
+                Label("Sheets", systemImage: "doc.plaintext.fill")
                     .accentColor(.blue)
             }
         } header: {
@@ -56,7 +56,7 @@ struct DemosListView: View {
 
     private var animationsSection: some View {
         Section {
-            NavigationLink(destination: SpringAnimationsDemoView()) {
+            NavigationLink(destination: SpringAnimationsView()) {
                 Label("Spring", systemImage: "tornado")
                     .accentColor(.orange)
             }
