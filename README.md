@@ -23,12 +23,13 @@ It's an app built in SwiftUI that will help UI/UX designers and iOS developpers 
 - iOS capabilities manipulations
   - Basics animations
   - Spring animations
+  - Sheets
   - MatchedGeometryEffects examples ?
   - Haptics feedbacks (+ custom editor ?)
-  - Navigation bars
-  - Sliders, Toggles
-  - Color picker
-  - Date picker
+  - Native Color picker
+  - Native Date picker
+  - SwiftUI Navigation bars (iOS 14 + iOS 15) 
+
 - Settings:
   - Contact form
   - Bug report or feature request: redirect to the [GitHub project issues](https://github.com/Kaww/Demoapp/issues/new/choose)
