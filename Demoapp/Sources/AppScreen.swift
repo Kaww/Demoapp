@@ -45,7 +45,7 @@ struct DemosListView: View {
 
     private var sheetsSection: some View {
         Section {
-            NavigationLink(destination: SheetsView()) {
+            NavigationLink(destination: SheetViews()) {
                 Label("Sheets", systemImage: "doc.plaintext.fill")
                     .accentColor(.blue)
             }

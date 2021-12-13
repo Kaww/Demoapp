@@ -1,6 +1,6 @@
 import SwiftUI
 
-struct DefaultSheets: View {
+struct DefaultSheetViews: View {
 
     @State private var showDefaultSheet = false
     @State private var showDefaultSheetNavigation = false
@@ -105,7 +105,7 @@ struct DefaultSheets: View {
 struct DefaultSheets_Previews: PreviewProvider {
     static var previews: some View {
         List {
-            DefaultSheets()
+            DefaultSheetViews()
         }
     }
 }

@@ -1,6 +1,6 @@
 import SwiftUI
 
-struct FullScreenCovers: View {
+struct FullScreenCoverViews: View {
 
     @State private var showFSC = false
 
@@ -21,7 +21,7 @@ struct FullScreenCovers: View {
 struct FullScreenCovers_Previews: PreviewProvider {
     static var previews: some View {
         List {
-            FullScreenCovers()
+            FullScreenCoverViews()
         }
     }
 }

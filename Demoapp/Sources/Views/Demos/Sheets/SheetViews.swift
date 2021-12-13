@@ -1,14 +1,17 @@
 import SwiftUI
 
-struct SheetsView: View {
+struct SheetViews: View {
 
     var body: some View {
         List {
-            DefaultSheets()
-            FullScreenCovers()
+            DefaultSheetViews()
+            FullScreenCoverViews()
 
-            // iOS 15 bottom sheet
-            // https://sarunw.com/posts/bottom-sheet-in-ios-15-with-uisheetpresentationcontroller/
+            if #available(iOS 15, *) {
+                BottomSheetViews()
+            } else {
+                BottomSheetUnavailableView()
+            }
         }
         .navigationTitle(Text("Sheets"))
         .navigationBarTitleDisplayMode(.inline)
@@ -18,7 +21,7 @@ struct SheetsView: View {
 struct SheetsView_Previews: PreviewProvider {
     static var previews: some View {
         NavigationView {
-            SheetsView()
+            SheetViews()
         }
     }
 }
