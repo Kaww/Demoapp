@@ -1,16 +1,26 @@
 import SwiftUI
 
-// Bottom sheet source:
-// https://sarunw.com/posts/bottom-sheet-in-ios-15-with-uisheetpresentationcontroller/
-
 @available(iOS 15, *)
 struct BottomSheetViews: View {
+
+    @State private var show = false
+
     var body: some View {
         VStack {
             Text("Hello, World!")
 
-            Button(action: presentModal) {
+            Button(action: { show.toggle() }) {
                 Text("Show!")
+            }
+            .bottomSheet(
+                isPresented: $show,
+                detents: .largeAndMedium,
+                shouldScrollExpandSheet: true,
+                largestUndimmedDetent: .medium,
+                showGrabber: true,
+                cornerRadius: 20
+            ) {
+                Text("Yoho")
             }
         }
     }
@@ -25,20 +35,6 @@ struct BottomSheetViews: View {
                 Text("Default sheet with scrolling")
             }
         }
-    }
-
-    @available(iOS 15, *)
-    private func presentModal() {
-        let detailViewController = UIHostingController(rootView: contentView)
-        let nav = UINavigationController(rootViewController: detailViewController)
-
-        nav.modalPresentationStyle = .pageSheet
-
-        if let sheet = nav.sheetPresentationController {
-            sheet.detents = [.medium(), .large()]
-        }
-
-        UIApplication.shared.windows.first?.rootViewController?.present(nav, animated: true, completion: nil)
     }
 }
 

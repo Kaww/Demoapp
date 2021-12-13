@@ -13,6 +13,7 @@
 		4987121527668C7000604A3A /* CONTRIBUTING.md in Resources */ = {isa = PBXBuildFile; fileRef = 4987121327668C7000604A3A /* CONTRIBUTING.md */; };
 		4987121727668E5200604A3A /* BottomSheetViews.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4987121627668E5200604A3A /* BottomSheetViews.swift */; };
 		4987121C2767EBE800604A3A /* BottomSheetUnavailableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4987121B2767EBE800604A3A /* BottomSheetUnavailableView.swift */; };
+		498712232767F5D800604A3A /* BottomSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 498712222767F5D800604A3A /* BottomSheet.swift */; };
 		5923507D273808D200EC2AAD /* DemoappApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5923507C273808D200EC2AAD /* DemoappApp.swift */; };
 		5923507F273808D200EC2AAD /* AppScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5923507E273808D200EC2AAD /* AppScreen.swift */; };
 		59235081273808D400EC2AAD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 59235080273808D400EC2AAD /* Assets.xcassets */; };
@@ -35,6 +36,7 @@
 		4987121327668C7000604A3A /* CONTRIBUTING.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = CONTRIBUTING.md; sourceTree = "<group>"; };
 		4987121627668E5200604A3A /* BottomSheetViews.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BottomSheetViews.swift; sourceTree = "<group>"; };
 		4987121B2767EBE800604A3A /* BottomSheetUnavailableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BottomSheetUnavailableView.swift; sourceTree = "<group>"; };
+		498712222767F5D800604A3A /* BottomSheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BottomSheet.swift; sourceTree = "<group>"; };
 		59235079273808D200EC2AAD /* Demoapp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Demoapp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5923507C273808D200EC2AAD /* DemoappApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DemoappApp.swift; sourceTree = "<group>"; };
 		5923507E273808D200EC2AAD /* AppScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppScreen.swift; sourceTree = "<group>"; };
@@ -78,6 +80,7 @@
 			children = (
 				4987121627668E5200604A3A /* BottomSheetViews.swift */,
 				4987121B2767EBE800604A3A /* BottomSheetUnavailableView.swift */,
+				498712222767F5D800604A3A /* BottomSheet.swift */,
 			);
 			path = BottomSheet;
 			sourceTree = "<group>";
@@ -274,6 +277,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				4987120F2766860E00604A3A /* DefaultSheetViews.swift in Sources */,
+				498712232767F5D800604A3A /* BottomSheet.swift in Sources */,
 				596920B32739CE250098D092 /* SpringAnimationControlPanel.swift in Sources */,
 				498712112766867500604A3A /* FullScreenCoverViews.swift in Sources */,
 				5956BD3927381A470085F0B0 /* InfosView.swift in Sources */,
