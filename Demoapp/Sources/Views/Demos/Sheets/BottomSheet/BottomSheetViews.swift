@@ -1,4 +1,5 @@
 import SwiftUI
+import BottomSheet
 
 @available(iOS 15, *)
 struct BottomSheetViews: View {

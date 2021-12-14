@@ -1,0 +1,16 @@
+{
+  "object": {
+    "pins": [
+      {
+        "package": "BottomSheet",
+        "repositoryURL": "https://github.com/Kaww/BottomSheet",
+        "state": {
+          "branch": "main",
+          "revision": "9c7d0c79571720845bfaa2f3996cf0a4f36e2172",
+          "version": null
+        }
+      }
+    ]
+  },
+  "version": 1
+}
