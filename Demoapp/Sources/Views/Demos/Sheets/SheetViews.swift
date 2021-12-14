@@ -8,7 +8,9 @@ struct SheetViews: View {
             FullScreenCoverViews()
 
             if #available(iOS 15, *) {
-                BottomSheetViews()
+                NavigationLink(destination: BottomSheetViews()) {
+                    Label("Bottom sheets", systemImage: "doc.text.image")
+                }
             } else {
                 BottomSheetUnavailableView()
             }

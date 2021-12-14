@@ -2,7 +2,9 @@ import SwiftUI
 
 struct BottomSheetUnavailableView: View {
     var body: some View {
-        Text("Only available with iOS 15, please update your device.")
+        Section {
+            Text("Only available with iOS 15, please update your device...")
+        }
     }
 }
 
