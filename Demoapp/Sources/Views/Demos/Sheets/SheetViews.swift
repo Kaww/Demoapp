@@ -9,7 +9,7 @@ struct SheetViews: View {
 
             if #available(iOS 15, *) {
                 NavigationLink(destination: BottomSheetViews()) {
-                    Label("Bottom sheets", systemImage: "doc.text.image")
+                    Label("Bottom sheets", systemImage: "rectangle.portrait.bottomhalf.inset.filled")
                 }
             } else {
                 BottomSheetUnavailableView()
@@ -17,6 +17,7 @@ struct SheetViews: View {
         }
         .navigationTitle(Text("Sheets"))
         .navigationBarTitleDisplayMode(.inline)
+        .accentColor(.blue)
     }
 }
 

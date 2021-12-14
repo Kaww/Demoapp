@@ -28,17 +28,19 @@ struct BottomSheetViews: View {
                     .frame(maxWidth: .infinity)
             }
         }
-        .navigationTitle(Text("Bottom sheets"))
+        .navigationTitle(Text("Bottom sheet"))
         .navigationBarTitleDisplayMode(.inline)
+        .tint(.blue)
         .bottomSheet(
             isPresented: $show,
             detents: selectedDetent,
             shouldScrollExpandSheet: shouldScrollExpandSheet,
             largestUndimmedDetent: largestUndimmedDetent,
             showGrabber: showGrabber,
-            cornerRadius: useCustomCornerRadius ? cornerRadius : nil) {
-                contentView
-            }
+            cornerRadius: useCustomCornerRadius ? cornerRadius : nil
+        ) {
+            contentView
+        }
     }
 
     private var contentView: some View {

@@ -7,7 +7,7 @@ struct FullScreenCoverViews: View {
     var body: some View {
         Section {
             Button(action: { showFSC.toggle() }) {
-                Label("Default sheet", systemImage: "doc.plaintext.fill")
+                Label("Show cover", systemImage: "rectangle.portrait.fill")
             }
             .fullScreenCover(isPresented: $showFSC) {
                 DefaultFSCView()

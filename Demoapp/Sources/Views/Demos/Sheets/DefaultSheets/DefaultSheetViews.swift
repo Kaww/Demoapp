@@ -12,35 +12,35 @@ struct DefaultSheetViews: View {
     var body: some View {
         Section {
             Button(action: { showDefaultSheet.toggle() }) {
-                Label("Default sheet", systemImage: "doc.plaintext.fill")
+                Label("Default sheet", systemImage: "doc.fill")
             }
             .sheet(isPresented: $showDefaultSheet) {
                 defaultSheetView()
             }
 
             Button(action: { showDefaultSheetNavigation.toggle() }) {
-                Label("With navigation", systemImage: "doc.plaintext.fill")
+                Label("With navigation", systemImage: "doc.fill")
             }
             .sheet(isPresented: $showDefaultSheetNavigation) {
                 defaultSheetNavigationView()
             }
 
             Button(action: { showDefaultSheetScrolling.toggle() }) {
-                Label("With scrolling", systemImage: "doc.plaintext.fill")
+                Label("With scrolling", systemImage: "arrow.up.doc.fill")
             }
             .sheet(isPresented: $showDefaultSheetScrolling) {
                 defaultSheetScrollingView()
             }
 
             Button(action: { showDefaultSheetNavigationScrolling.toggle() }) {
-                Label("With navigation + scrolling", systemImage: "doc.plaintext.fill")
+                Label("With navigation + scrolling", systemImage: "arrow.up.doc.fill")
             }
             .sheet(isPresented: $showDefaultSheetNavigationScrolling) {
                 defaultSheetNavigationAndScrollingView()
             }
 
             Button(action: { showStackedSheets.toggle() }) {
-                Label("Stacked sheets", systemImage: "doc.plaintext.fill")
+                Label("Stacked sheets", systemImage: "doc.on.doc.fill")
             }
             .sheet(isPresented: $showStackedSheets) {
                 stackedSheetView()
