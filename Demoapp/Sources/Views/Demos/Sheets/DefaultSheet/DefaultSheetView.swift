@@ -18,7 +18,7 @@ struct DefaultSheetView: View {
 
             Section {
                 Button(action: { showDefaultSheet.toggle() }) {
-                    Label("Default sheet", systemImage: "doc.fill")
+                    Label("Default sheet", systemImage: "doc.text.fill")
                 }
                 .sheet(isPresented: $showDefaultSheet) {
                     defaultSheetView()
@@ -31,7 +31,7 @@ struct DefaultSheetView: View {
 
             Section {
                 Button(action: { showDefaultSheetNavigation.toggle() }) {
-                    Label("With navigation", systemImage: "doc.fill")
+                    Label("With navigation", systemImage: "doc.text.fill")
                 }
                 .sheet(isPresented: $showDefaultSheetNavigation) {
                     defaultSheetNavigationView()
@@ -56,6 +56,8 @@ struct DefaultSheetView: View {
                 .sheet(isPresented: $showDefaultSheetNavigationScrolling) {
                     defaultSheetNavigationAndScrollingView()
                 }
+            } header: {
+                Text("Scroll")
             } footer: {
                 Text("Scrolling is possible inside sheets. If scroll down is possible, the view will scroll, if not, the sheet will be dragged down.")
             }
@@ -158,7 +160,7 @@ struct DefaultSheetView: View {
 
 struct DefaultSheets_Previews: PreviewProvider {
     static var previews: some View {
-        List {
+        NavigationView {
             DefaultSheetView()
         }
     }

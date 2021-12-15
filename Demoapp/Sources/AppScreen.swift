@@ -46,10 +46,12 @@ struct DemosListView: View {
     private var sheetsSection: some View {
         Section {
             NavigationLink(destination: DefaultSheetView()) {
-                Label("Default sheet", systemImage: "doc.fill")
+                Label("Default sheet", systemImage: "doc.text.fill")
             }
 
-            FullScreenCoverViews()
+            NavigationLink(destination: FullScreenCoverViews()) {
+                Label("Full screen cover", systemImage: "doc.plaintext.fill")
+            }
 
             if #available(iOS 15, *) {
                 NavigationLink(destination: BottomSheetView()) {
