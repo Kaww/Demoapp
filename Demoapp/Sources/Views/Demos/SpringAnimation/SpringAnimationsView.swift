@@ -1,6 +1,6 @@
 import SwiftUI
 
-struct SpringAnimationsDemoView: View {
+struct SpringAnimationsView: View {
 
     typealias AnimationType = SpringAnimationControlPanel.AnimationType
 
@@ -46,7 +46,7 @@ struct SpringAnimationsDemoView: View {
             controlPanel
         }
         .frame(maxWidth: .infinity, maxHeight: .infinity)
-        .navigationTitle("Spring animations")
+        .navigationTitle(Text("Spring animations"))
         .navigationBarTitleDisplayMode(.inline)
         .toolbar {
             ToolbarItemGroup(placement: .navigationBarTrailing) {
@@ -206,10 +206,10 @@ struct SpringAnimationsDemoView: View {
     }
 }
 
-struct SpringAnimationsDemoView_Previews: PreviewProvider {
+struct SpringAnimationsView_Previews: PreviewProvider {
     static var previews: some View {
         NavigationView {
-            SpringAnimationsDemoView()
+            SpringAnimationsView()
         }
     }
 }

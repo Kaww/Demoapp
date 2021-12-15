@@ -23,7 +23,7 @@ struct DemosListView: View {
             animationsSection
             willBeAddedSoonLabel
         }
-        .navigationTitle("Demoapp (:")
+        .navigationTitle(Text("Demoapp (:"))
         .toolbar {
             ToolbarItemGroup(placement: .navigationBarLeading) {
                 Button(action: { showInfosView = true }) {
@@ -45,9 +45,20 @@ struct DemosListView: View {
 
     private var sheetsSection: some View {
         Section {
-            NavigationLink(destination: SheetsDemoView()) {
-                Label("Sheets", systemImage: "menucard.fill")
-                    .accentColor(.blue)
+            NavigationLink(destination: DefaultSheetView()) {
+                Label("Default sheet", systemImage: "doc.text.fill")
+            }
+
+            NavigationLink(destination: FullScreenCoverViews()) {
+                Label("Full screen cover", systemImage: "doc.plaintext.fill")
+            }
+
+            if #available(iOS 15, *) {
+                NavigationLink(destination: BottomSheetView()) {
+                    Label("Bottom sheet", systemImage: "rectangle.portrait.bottomhalf.inset.filled")
+                }
+            } else {
+                BottomSheetUnavailableView()
             }
         } header: {
             Text("Sheets, navigation, ...")
@@ -56,7 +67,7 @@ struct DemosListView: View {
 
     private var animationsSection: some View {
         Section {
-            NavigationLink(destination: SpringAnimationsDemoView()) {
+            NavigationLink(destination: SpringAnimationsView()) {
                 Label("Spring", systemImage: "tornado")
                     .accentColor(.orange)
             }
