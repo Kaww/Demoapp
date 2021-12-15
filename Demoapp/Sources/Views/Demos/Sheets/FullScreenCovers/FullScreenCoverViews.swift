@@ -5,15 +5,11 @@ struct FullScreenCoverViews: View {
     @State private var showFSC = false
 
     var body: some View {
-        Section {
-            Button(action: { showFSC.toggle() }) {
-                Label("Show cover", systemImage: "rectangle.portrait.fill")
-            }
-            .fullScreenCover(isPresented: $showFSC) {
-                DefaultFSCView()
-            }
-        } header: {
-            Text("Full screen covers")
+        Button(action: { showFSC.toggle() }) {
+            Label("Show cover", systemImage: "rectangle.portrait.fill")
+        }
+        .fullScreenCover(isPresented: $showFSC) {
+            DefaultFSCView()
         }
     }
 }

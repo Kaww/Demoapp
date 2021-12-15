@@ -1,6 +1,6 @@
 import SwiftUI
 
-struct DefaultSheetViews: View {
+struct DefaultSheetView: View {
 
     @State private var showDefaultSheet = false
     @State private var showDefaultSheetNavigation = false
@@ -10,7 +10,7 @@ struct DefaultSheetViews: View {
     @State private var showSecondStackedSheets = false
 
     var body: some View {
-        Section {
+        List {
             Button(action: { showDefaultSheet.toggle() }) {
                 Label("Default sheet", systemImage: "doc.fill")
             }
@@ -45,9 +45,9 @@ struct DefaultSheetViews: View {
             .sheet(isPresented: $showStackedSheets) {
                 stackedSheetView()
             }
-        } header: {
-            Text("Default sheet")
         }
+        .navigationTitle(Text("Default sheet"))
+        .navigationBarTitleDisplayMode(.inline)
     }
 
     private func defaultSheetView() -> some View {
@@ -105,7 +105,7 @@ struct DefaultSheetViews: View {
 struct DefaultSheets_Previews: PreviewProvider {
     static var previews: some View {
         List {
-            DefaultSheetViews()
+            DefaultSheetView()
         }
     }
 }

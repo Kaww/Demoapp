@@ -45,9 +45,18 @@ struct DemosListView: View {
 
     private var sheetsSection: some View {
         Section {
-            NavigationLink(destination: SheetViews()) {
-                Label("Sheets", systemImage: "doc.plaintext.fill")
-                    .accentColor(.blue)
+            NavigationLink(destination: DefaultSheetView()) {
+                Label("Default sheet", systemImage: "doc.fill")
+            }
+
+            FullScreenCoverViews()
+
+            if #available(iOS 15, *) {
+                NavigationLink(destination: BottomSheetView()) {
+                    Label("Bottom sheet", systemImage: "rectangle.portrait.bottomhalf.inset.filled")
+                }
+            } else {
+                BottomSheetUnavailableView()
             }
         } header: {
             Text("Sheets, navigation, ...")

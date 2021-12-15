@@ -2,7 +2,7 @@ import SwiftUI
 import BottomSheet
 
 @available(iOS 15, *)
-struct BottomSheetViews: View {
+struct BottomSheetView: View {
 
     @State private var show = false
     @State private var selectedDetent: BottomSheet.Detents = .medium
@@ -136,7 +136,7 @@ struct BottomSheetViews: View {
                 maximumValueLabel: { Text("\(Int(cornerRadius))") }
             )
             .disabled(!useCustomCornerRadius)
-            .tint(useCustomCornerRadius ? .accentColor : .gray)
+            .tint(useCustomCornerRadius ? .blue : .gray)
         } header: {
             Text("Corner radius")
         } footer: {
@@ -149,7 +149,7 @@ struct BottomSheet_Previews: PreviewProvider {
     static var previews: some View {
         NavigationView {
             if #available(iOS 15, *) {
-                BottomSheetViews()
+                BottomSheetView()
             } else {
                 BottomSheetUnavailableView()
             }
