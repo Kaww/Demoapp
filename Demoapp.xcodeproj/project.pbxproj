@@ -14,6 +14,7 @@
 		4987121727668E5200604A3A /* BottomSheetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4987121627668E5200604A3A /* BottomSheetView.swift */; };
 		4987121C2767EBE800604A3A /* BottomSheetUnavailableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4987121B2767EBE800604A3A /* BottomSheetUnavailableView.swift */; };
 		498712262768919A00604A3A /* BottomSheet in Frameworks */ = {isa = PBXBuildFile; productRef = 498712252768919A00604A3A /* BottomSheet */; };
+		4987122E276A702000604A3A /* UndismissableSheetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4987122D276A702000604A3A /* UndismissableSheetView.swift */; };
 		5923507D273808D200EC2AAD /* DemoappApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5923507C273808D200EC2AAD /* DemoappApp.swift */; };
 		5923507F273808D200EC2AAD /* AppScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5923507E273808D200EC2AAD /* AppScreen.swift */; };
 		59235081273808D400EC2AAD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 59235080273808D400EC2AAD /* Assets.xcassets */; };
@@ -35,6 +36,7 @@
 		4987121327668C7000604A3A /* CONTRIBUTING.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = CONTRIBUTING.md; sourceTree = "<group>"; };
 		4987121627668E5200604A3A /* BottomSheetView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BottomSheetView.swift; sourceTree = "<group>"; };
 		4987121B2767EBE800604A3A /* BottomSheetUnavailableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BottomSheetUnavailableView.swift; sourceTree = "<group>"; };
+		4987122D276A702000604A3A /* UndismissableSheetView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UndismissableSheetView.swift; sourceTree = "<group>"; };
 		59235079273808D200EC2AAD /* Demoapp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Demoapp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5923507C273808D200EC2AAD /* DemoappApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DemoappApp.swift; sourceTree = "<group>"; };
 		5923507E273808D200EC2AAD /* AppScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppScreen.swift; sourceTree = "<group>"; };
@@ -85,6 +87,7 @@
 			isa = PBXGroup;
 			children = (
 				4987120E2766860E00604A3A /* DefaultSheetView.swift */,
+				4987122D276A702000604A3A /* UndismissableSheetView.swift */,
 			);
 			path = DefaultSheet;
 			sourceTree = "<group>";
@@ -287,6 +290,7 @@
 				5923507F273808D200EC2AAD /* AppScreen.swift in Sources */,
 				59B4C381274026C4004D3C19 /* SpringAnimationControlPanelInfos.swift in Sources */,
 				596920AE2739BBA50098D092 /* Colors.swift in Sources */,
+				4987122E276A702000604A3A /* UndismissableSheetView.swift in Sources */,
 				5956BD35273819870085F0B0 /* SpringAnimationsView.swift in Sources */,
 				596920B5273B074A0098D092 /* SpringAnimationControlPanelSettings.swift in Sources */,
 				4987121727668E5200604A3A /* BottomSheetView.swift in Sources */,

@@ -8,42 +8,96 @@ struct DefaultSheetView: View {
     @State private var showDefaultSheetNavigationScrolling = false
     @State private var showStackedSheets = false
     @State private var showSecondStackedSheets = false
+    @State private var showDismissWithButtonSheet = false
+    @State private var showPreventDismissSheet = false
 
     var body: some View {
         List {
-            Button(action: { showDefaultSheet.toggle() }) {
-                Label("Default sheet", systemImage: "doc.fill")
-            }
-            .sheet(isPresented: $showDefaultSheet) {
-                defaultSheetView()
+
+            // MARK: Default
+
+            Section {
+                Button(action: { showDefaultSheet.toggle() }) {
+                    Label("Default sheet", systemImage: "doc.fill")
+                }
+                .sheet(isPresented: $showDefaultSheet) {
+                    defaultSheetView()
+                }
+            } footer: {
+                Text("Use a sheet to present new views over existing ones, while still allowing users to drag down to dismiss the new view when they are ready.")
             }
 
-            Button(action: { showDefaultSheetNavigation.toggle() }) {
-                Label("With navigation", systemImage: "doc.fill")
-            }
-            .sheet(isPresented: $showDefaultSheetNavigation) {
-                defaultSheetNavigationView()
+            // MARK: Navigation
+
+            Section {
+                Button(action: { showDefaultSheetNavigation.toggle() }) {
+                    Label("With navigation", systemImage: "doc.fill")
+                }
+                .sheet(isPresented: $showDefaultSheetNavigation) {
+                    defaultSheetNavigationView()
+                }
+            } footer: {
+                Text("Navigation is possible inside sheets.")
             }
 
-            Button(action: { showDefaultSheetScrolling.toggle() }) {
-                Label("With scrolling", systemImage: "arrow.up.doc.fill")
-            }
-            .sheet(isPresented: $showDefaultSheetScrolling) {
-                defaultSheetScrollingView()
+            // MARK: Scroll
+
+            Section {
+                Button(action: { showDefaultSheetScrolling.toggle() }) {
+                    Label("With scrolling", systemImage: "arrow.up.doc.fill")
+                }
+                .sheet(isPresented: $showDefaultSheetScrolling) {
+                    defaultSheetScrollingView()
+                }
+
+                Button(action: { showDefaultSheetNavigationScrolling.toggle() }) {
+                    Label("Scrolling & navigation", systemImage: "arrow.up.doc.fill")
+                }
+                .sheet(isPresented: $showDefaultSheetNavigationScrolling) {
+                    defaultSheetNavigationAndScrollingView()
+                }
+            } footer: {
+                Text("Scrolling is possible inside sheets. If scroll down is possible, the view will scroll, if not, the sheet will be dragged down.")
             }
 
-            Button(action: { showDefaultSheetNavigationScrolling.toggle() }) {
-                Label("With navigation + scrolling", systemImage: "arrow.up.doc.fill")
-            }
-            .sheet(isPresented: $showDefaultSheetNavigationScrolling) {
-                defaultSheetNavigationAndScrollingView()
+            // MARK: Stack
+
+            Section {
+                Button(action: { showStackedSheets.toggle() }) {
+                    Label("Stacked sheets", systemImage: "doc.on.doc.fill")
+                }
+                .sheet(isPresented: $showStackedSheets) {
+                    stackedSheetView()
+                }
+            } footer: {
+                Text("Sheets can easily be stacked.")
             }
 
-            Button(action: { showStackedSheets.toggle() }) {
-                Label("Stacked sheets", systemImage: "doc.on.doc.fill")
+            // MARK: Dismiss
+
+            Section {
+                Button(action: { showDismissWithButtonSheet.toggle() }) {
+                    Label("Dismiss with a button", systemImage: "lock.doc.fill")
+                }
+                .sheet(isPresented: $showDismissWithButtonSheet) {
+                    DismissWithButtonSheetView()
+                }
+
+                Button(action: { showPreventDismissSheet.toggle() }) {
+                    Label("Undismissable sheet", systemImage: "lock.doc.fill")
+                }
+                .sheet(isPresented: $showPreventDismissSheet) {
+                    UndismissableSheetView()
+                }
+            } header: {
+                Text("Dismiss")
+            } footer: {
+                Text("It's possible to force-dismiss a sheet or to prevent a it to be dismissed.")
             }
-            .sheet(isPresented: $showStackedSheets) {
-                stackedSheetView()
+
+            Section {
+            } footer: {
+                Text("More infos....")
             }
         }
         .navigationTitle(Text("Default sheet"))
@@ -106,6 +160,22 @@ struct DefaultSheets_Previews: PreviewProvider {
     static var previews: some View {
         List {
             DefaultSheetView()
+        }
+    }
+}
+
+// MARK: - Private Subviews
+
+private struct DismissWithButtonSheetView: View {
+    @Environment(\.presentationMode) var presentationMode
+
+    var body: some View {
+        VStack {
+            Text("I'm a sheet! 🤩")
+
+            Button(action: { presentationMode.wrappedValue.dismiss() }) {
+                Text("Dismiss")
+            }
         }
     }
 }
