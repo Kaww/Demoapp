@@ -21,6 +21,7 @@ struct DemosListView: View {
         List {
             sheetsSection
             animationsSection
+            hapticsSection
             willBeAddedSoonLabel
         }
         .navigationTitle(Text("Demoapp (:"))
@@ -73,6 +74,17 @@ struct DemosListView: View {
             }
         } header: {
             Text("Animations")
+        }
+    }
+
+    private var hapticsSection: some View {
+        Section {
+            NavigationLink(destination: HapticsView()) {
+                Label("Haptics and vibrations", systemImage: "hand.tap.fill")
+                    .accentColor(.purple)
+            }
+        } header: {
+            Text("Sensors")
         }
     }
 
