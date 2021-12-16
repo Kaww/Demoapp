@@ -1,7 +1,6 @@
 import SwiftUI
 import CoreHaptics
 
-// MARK: Environment Keys
 struct HapticsKey: EnvironmentKey {
     static var defaultValue = Haptics()
 }
@@ -13,7 +12,6 @@ extension EnvironmentValues {
     }
 }
 
-// MARK: Haptics
 struct Haptics {
 
     let notification: Notification
@@ -29,11 +27,13 @@ struct Haptics {
     }
 
     // MARK: Notification
+
     struct Notification {
         private let generator: UINotificationFeedbackGenerator
 
         init(generator: UINotificationFeedbackGenerator) {
             self.generator = generator
+            self.generator.prepare()
         }
 
         func notify(_ feedbackType: UINotificationFeedbackGenerator.FeedbackType) {
@@ -42,11 +42,13 @@ struct Haptics {
     }
 
     // MARK: Selection
+
     struct Selection {
         private let generator: UISelectionFeedbackGenerator
 
         init(generator: UISelectionFeedbackGenerator) {
             self.generator = generator
+            self.generator.prepare()
         }
 
         func selectionChanged() {
@@ -55,11 +57,13 @@ struct Haptics {
     }
 
     // MARK: Impact
+
     struct Impact {
         private let generator: UIImpactFeedbackGenerator
 
         init(generator: UIImpactFeedbackGenerator) {
             self.generator = generator
+            self.generator.prepare()
         }
 
         func impactOccurred(intensity: CGFloat? = nil) {
@@ -71,8 +75,10 @@ struct Haptics {
         }
     }
 
-    // MARK: Engine
+    // MARK: Custom Engine
+
     struct Engine {
-        // Do some sketchy shit.
+        // Do some sketchy shit...
+        // https://www.hackingwithswift.com/example-code/core-haptics/how-to-play-custom-vibrations-using-core-haptics
     }
 }

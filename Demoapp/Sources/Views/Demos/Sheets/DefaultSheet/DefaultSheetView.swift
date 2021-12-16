@@ -96,11 +96,6 @@ struct DefaultSheetView: View {
             } footer: {
                 Text("It's possible to force-dismiss a sheet or to prevent a it to be dismissed.")
             }
-
-            Section {
-            } footer: {
-                Text("More infos....")
-            }
         }
         .navigationTitle(Text("Default sheet"))
         .navigationBarTitleDisplayMode(.inline)

@@ -3,42 +3,78 @@ import SwiftUI
 struct HapticsView: View {
     @Environment(\.haptics) var haptics
 
+    @State private var impactIntensity: CGFloat = 0.5
+
+    private let columns = [
+        GridItem(.adaptive(minimum: 100, maximum: 150), spacing: 20)
+    ]
+
     var body: some View {
-        VStack(spacing: 20) {
+        List {
+            selectionSection
+            notificationsSection
+            impactsSection
+            
+        }
+        .accentColor(.purple)
+        .navigationTitle(Text("Haptics feedbacks"))
+        .navigationBarTitleDisplayMode(.inline)
+    }
+
+    private var selectionSection: some View {
+        Section {
+            Button(action: { haptics.selection.selectionChanged() }) {
+                Label("Selection", systemImage: "hand.tap.fill")
+            }
+        } header: {
             Text("Selection")
-                .onTapGesture {
-                    haptics.selection.selectionChanged()
-                }
+        } footer: {
+            Text("Use selection feedback to communicate movement through a series of discrete values.")
+        }
+    }
 
-            Text("Impact default")
-                .onTapGesture {
-                    haptics.impact.impactOccurred()
-                }
+    private var notificationsSection: some View {
+        Section {
+            Button(action: { haptics.notification.notify(.success) }) {
+                Label("Success", systemImage: "checkmark.circle.fill")
+                    .accentColor(.green)
+            }
 
-            Text("Impact 0.5")
-                .onTapGesture {
-                    haptics.impact.impactOccurred(intensity: 1)
-                }
+            Button(action: { haptics.notification.notify(.warning) }) {
+                Label("Warning", systemImage: "exclamationmark.triangle.fill")
+                    .accentColor(.orange)
+            }
 
-            Text("Impact 1")
-                .onTapGesture {
-                    haptics.impact.impactOccurred(intensity: 1)
-                }
+            Button(action: { haptics.notification.notify(.error) }) {
+                Label("Error", systemImage: "multiply.square.fill")
+                    .accentColor(.red)
+            }
+        } header: {
+            Text("Notifications")
+        } footer: {
+            Text("Use notification feedback to communicate that a task or action has succeeded, failed, or produced a warning of some kind.")
+        }
+    }
 
-            Text("Success")
-                .onTapGesture {
-                    haptics.notification.notify(.success)
-                }
+    private var impactsSection: some View {
+        Section {
+            Button(action: { haptics.impact.impactOccurred() }) {
+                Text("Default impact")
+            }
 
-            Text("Warning")
-                .onTapGesture {
-                    haptics.notification.notify(.warning)
-                }
+            Button(action: { haptics.impact.impactOccurred(intensity: impactIntensity) }) {
+                Text("Impact with intensity of \(String(format: "%.2f", impactIntensity))")
+            }
 
-            Text("Error")
-                .onTapGesture {
-                    haptics.notification.notify(.error)
-                }
+            Slider(
+                value: $impactIntensity,
+                in: 0...1,
+                step: 0.05
+            )
+        } header: {
+            Text("Impacts")
+        } footer: {
+            Text("Use impact feedback to indicate that an impact has occurred. For example, you might trigger impact feedback when a user interface object collides with another object or snaps into place.")
         }
     }
 }
@@ -46,5 +82,6 @@ struct HapticsView: View {
 struct HapticsView_Previews: PreviewProvider {
     static var previews: some View {
         HapticsView()
+            .preferredColorScheme(.dark)
     }
 }
