@@ -15,6 +15,8 @@
 		4987121C2767EBE800604A3A /* BottomSheetUnavailableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4987121B2767EBE800604A3A /* BottomSheetUnavailableView.swift */; };
 		498712262768919A00604A3A /* BottomSheet in Frameworks */ = {isa = PBXBuildFile; productRef = 498712252768919A00604A3A /* BottomSheet */; };
 		4987122E276A702000604A3A /* UndismissableSheetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4987122D276A702000604A3A /* UndismissableSheetView.swift */; };
+		49871231276A7A3700604A3A /* Haptics.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49871230276A7A3700604A3A /* Haptics.swift */; };
+		49871234276A7A7500604A3A /* HapticsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49871233276A7A7500604A3A /* HapticsView.swift */; };
 		5923507D273808D200EC2AAD /* DemoappApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5923507C273808D200EC2AAD /* DemoappApp.swift */; };
 		5923507F273808D200EC2AAD /* AppScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5923507E273808D200EC2AAD /* AppScreen.swift */; };
 		59235081273808D400EC2AAD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 59235080273808D400EC2AAD /* Assets.xcassets */; };
@@ -37,6 +39,8 @@
 		4987121627668E5200604A3A /* BottomSheetView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BottomSheetView.swift; sourceTree = "<group>"; };
 		4987121B2767EBE800604A3A /* BottomSheetUnavailableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BottomSheetUnavailableView.swift; sourceTree = "<group>"; };
 		4987122D276A702000604A3A /* UndismissableSheetView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UndismissableSheetView.swift; sourceTree = "<group>"; };
+		49871230276A7A3700604A3A /* Haptics.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Haptics.swift; sourceTree = "<group>"; };
+		49871233276A7A7500604A3A /* HapticsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HapticsView.swift; sourceTree = "<group>"; };
 		59235079273808D200EC2AAD /* Demoapp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Demoapp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5923507C273808D200EC2AAD /* DemoappApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DemoappApp.swift; sourceTree = "<group>"; };
 		5923507E273808D200EC2AAD /* AppScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppScreen.swift; sourceTree = "<group>"; };
@@ -105,6 +109,7 @@
 			children = (
 				4987120C27667E8800604A3A /* Sheets */,
 				596920B12739CE020098D092 /* SpringAnimation */,
+				49871232276A7A5F00604A3A /* Haptics */,
 			);
 			path = Demos;
 			sourceTree = "<group>";
@@ -123,6 +128,22 @@
 				5956BD3827381A470085F0B0 /* InfosView.swift */,
 			);
 			path = Infos;
+			sourceTree = "<group>";
+		};
+		4987122F276A7A2D00604A3A /* Shared */ = {
+			isa = PBXGroup;
+			children = (
+				49871230276A7A3700604A3A /* Haptics.swift */,
+			);
+			path = Shared;
+			sourceTree = "<group>";
+		};
+		49871232276A7A5F00604A3A /* Haptics */ = {
+			isa = PBXGroup;
+			children = (
+				49871233276A7A7500604A3A /* HapticsView.swift */,
+			);
+			path = Haptics;
 			sourceTree = "<group>";
 		};
 		59235070273808D200EC2AAD = {
@@ -167,6 +188,7 @@
 				5923507C273808D200EC2AAD /* DemoappApp.swift */,
 				5923507E273808D200EC2AAD /* AppScreen.swift */,
 				5956BD31273819450085F0B0 /* Views */,
+				4987122F276A7A2D00604A3A /* Shared */,
 			);
 			path = Sources;
 			sourceTree = "<group>";
@@ -284,6 +306,7 @@
 				4987120F2766860E00604A3A /* DefaultSheetView.swift in Sources */,
 				596920B32739CE250098D092 /* SpringAnimationControlPanel.swift in Sources */,
 				498712112766867500604A3A /* FullScreenCoverViews.swift in Sources */,
+				49871234276A7A7500604A3A /* HapticsView.swift in Sources */,
 				5956BD3927381A470085F0B0 /* InfosView.swift in Sources */,
 				5956BD37273819EE0085F0B0 /* SettingsView.swift in Sources */,
 				4987121C2767EBE800604A3A /* BottomSheetUnavailableView.swift in Sources */,
@@ -293,6 +316,7 @@
 				4987122E276A702000604A3A /* UndismissableSheetView.swift in Sources */,
 				5956BD35273819870085F0B0 /* SpringAnimationsView.swift in Sources */,
 				596920B5273B074A0098D092 /* SpringAnimationControlPanelSettings.swift in Sources */,
+				49871231276A7A3700604A3A /* Haptics.swift in Sources */,
 				4987121727668E5200604A3A /* BottomSheetView.swift in Sources */,
 				5923507D273808D200EC2AAD /* DemoappApp.swift in Sources */,
 			);
