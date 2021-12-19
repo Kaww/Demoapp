@@ -1,6 +1,6 @@
 import SwiftUI
 
-struct SpringAnimationControlPanel: View {
+struct SpringAnimationsControlPanel: View {
 
     struct AnimationType: Identifiable {
         let id: Int
@@ -208,15 +208,15 @@ Animation.spring(
     }
 }
 
-struct SpringAnimationControlPanel_Previews: PreviewProvider {
+struct SpringAnimationsControlPanel_Previews: PreviewProvider {
     static let animationTypes = [
-        SpringAnimationControlPanel.AnimationType(id: 0, name: "Scale"),
-        SpringAnimationControlPanel.AnimationType(id: 1, name: "Move"),
-        SpringAnimationControlPanel.AnimationType(id: 2, name: "Drag")
+        SpringAnimationsControlPanel.AnimationType(id: 0, name: "Scale"),
+        SpringAnimationsControlPanel.AnimationType(id: 1, name: "Move"),
+        SpringAnimationsControlPanel.AnimationType(id: 2, name: "Drag")
     ]
 
     static var previews: some View {
-        SpringAnimationControlPanel(
+        SpringAnimationsControlPanel(
             response: .constant(0.8),
             damping: .constant(0.4),
             blend: .constant(0.4),

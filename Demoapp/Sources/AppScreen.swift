@@ -91,16 +91,13 @@ struct DemosListView: View {
     private var willBeAddedSoonLabel: some View {
         Section {
         } footer: {
-            Text("Will be added soon...\n")
+            Text("Will be added soon:\n")
             + Text(" → Basic animations\n")
             + Text(" → Matched geometry effects\n")
-            + Text(" → Haptics\n")
             + Text(" → Accessiblity\n")
             + Text(" → Navigation bars\n")
-            + Text(" → Sliders, Toggles, ...\n")
-            + Text(" → Color picker\n")
-            + Text(" → Date picker\n")
-            + Text(" → A page with some fun UI tricks...\n")
+            + Text(" → Native color picker\n")
+            + Text(" → Native date picker\n")
         }
     }
 }

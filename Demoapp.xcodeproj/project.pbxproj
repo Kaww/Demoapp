@@ -72,7 +72,7 @@
 			isa = PBXGroup;
 			children = (
 				4987121D2767EC2200604A3A /* DefaultSheet */,
-				4987121E2767EC2A00604A3A /* FullScreenCovers */,
+				4987121E2767EC2A00604A3A /* FullScreenCover */,
 				498712182767E7ED00604A3A /* BottomSheet */,
 			);
 			path = Sheets;
@@ -96,19 +96,19 @@
 			path = DefaultSheet;
 			sourceTree = "<group>";
 		};
-		4987121E2767EC2A00604A3A /* FullScreenCovers */ = {
+		4987121E2767EC2A00604A3A /* FullScreenCover */ = {
 			isa = PBXGroup;
 			children = (
 				498712102766867500604A3A /* FullScreenCoverViews.swift */,
 			);
-			path = FullScreenCovers;
+			path = FullScreenCover;
 			sourceTree = "<group>";
 		};
 		4987121F2767ED4800604A3A /* Demos */ = {
 			isa = PBXGroup;
 			children = (
 				4987120C27667E8800604A3A /* Sheets */,
-				596920B12739CE020098D092 /* SpringAnimation */,
+				596920B12739CE020098D092 /* SpringAnimations */,
 				49871232276A7A5F00604A3A /* Haptics */,
 			);
 			path = Demos;
@@ -213,7 +213,7 @@
 			path = Style;
 			sourceTree = "<group>";
 		};
-		596920B12739CE020098D092 /* SpringAnimation */ = {
+		596920B12739CE020098D092 /* SpringAnimations */ = {
 			isa = PBXGroup;
 			children = (
 				5956BD34273819870085F0B0 /* SpringAnimationsView.swift */,
@@ -221,7 +221,7 @@
 				596920B4273B074A0098D092 /* SpringAnimationControlPanelSettings.swift */,
 				59B4C380274026C4004D3C19 /* SpringAnimationControlPanelInfos.swift */,
 			);
-			path = SpringAnimation;
+			path = SpringAnimations;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */

@@ -2,7 +2,7 @@ import SwiftUI
 
 struct SpringAnimationsView: View {
 
-    typealias AnimationType = SpringAnimationControlPanel.AnimationType
+    typealias AnimationType = SpringAnimationsControlPanel.AnimationType
 
     // MARK: - Private properties
 
@@ -195,7 +195,7 @@ struct SpringAnimationsView: View {
         VStack {
             Spacer()
 
-            SpringAnimationControlPanel(
+            SpringAnimationsControlPanel(
                 response: $animationResponse,
                 damping: $animationDampingFraction,
                 blend: $animationBlendDuration,

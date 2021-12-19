@@ -14,7 +14,13 @@ struct HapticsView: View {
             selectionSection
             notificationsSection
             impactsSection
-            
+
+            Section {
+            } header: {
+                Text("Custom Feedback")
+            } footer: {
+                Text("It's possible to create our own haptics and vibrations feedbacks thank's to the framework CoreHaptics.\nCustom feedbacks creation will be added later in this app.")
+            }
         }
         .accentColor(.purple)
         .navigationTitle(Text("Haptics feedbacks"))
