@@ -5,10 +5,11 @@ import BottomSheet
 struct BottomSheetView: View {
 
     @State private var show = false
-    @State private var selectedDetent: BottomSheet.Detents = .medium
+    @State private var selectedDetent: BottomSheet.Detents = .mediumAndLarge
     @State private var shouldScrollExpandSheet = true
     @State private var largestUndimmedDetent: BottomSheet.LargestUndimmedDetent? = .none
     @State private var showGrabber = false
+    @State private var showsInCompactHeight = false
 
     @State private var useCustomCornerRadius = false
     private let cornerRadiusMinValue: CGFloat = .zero
@@ -20,16 +21,19 @@ struct BottomSheetView: View {
             detentsSection
             largestUndimmedDetentSection
             scrollSection
+            compactHeightConfig
             grabberSection
             customRadiusSection
-
-            Button(action: { show.toggle() }) {
-                Text("Show!")
-                    .frame(maxWidth: .infinity)
-            }
         }
         .navigationTitle(Text("Bottom sheet"))
         .navigationBarTitleDisplayMode(.inline)
+        .toolbar {
+            ToolbarItem(placement: .navigationBarTrailing) {
+                Button(action: { show.toggle() }) {
+                    Text("Show!")
+                }
+            }
+        }
         .tint(.blue)
         .bottomSheet(
             isPresented: $show,
@@ -37,13 +41,17 @@ struct BottomSheetView: View {
             shouldScrollExpandSheet: shouldScrollExpandSheet,
             largestUndimmedDetent: largestUndimmedDetent,
             showGrabber: showGrabber,
-            cornerRadius: useCustomCornerRadius ? cornerRadius : nil
+            cornerRadius: useCustomCornerRadius ? cornerRadius : nil,
+            showsInCompactHeight: showsInCompactHeight
         ) {
-            contentView
+            sheetContentView
+        }
+        .onDisappear {
+            show = false
         }
     }
 
-    private var contentView: some View {
+    private var sheetContentView: some View {
         List {
             Section {
                 Button(action: { BottomSheet.dismiss() }) {
@@ -110,6 +118,18 @@ struct BottomSheetView: View {
         }
     }
 
+    private var compactHeightConfig: some View {
+        Section {
+            Toggle(isOn: $showsInCompactHeight) {
+                Text("Attach to bottom")
+            }
+        } header: {
+            Text("Compact height")
+        } footer: {
+            Text("Determines whether the sheet attaches to the bottom edge of the screen in a compact-height size class.")
+        }
+    }
+
     private var grabberSection: some View {
         Section {
             Toggle(isOn: $showGrabber) {
@@ -145,7 +165,7 @@ struct BottomSheetView: View {
     }
 }
 
-struct BottomSheet_Previews: PreviewProvider {
+struct BottomSheetView_Previews: PreviewProvider {
     static var previews: some View {
         NavigationView {
             if #available(iOS 15, *) {

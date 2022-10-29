@@ -1,16 +1,14 @@
 {
-  "object": {
-    "pins": [
-      {
-        "package": "BottomSheet",
-        "repositoryURL": "https://github.com/Kaww/BottomSheet",
-        "state": {
-          "branch": "main",
-          "revision": "b784bb0d031b5e9c23c05ee1809324f499aacbb1",
-          "version": null
-        }
+  "pins" : [
+    {
+      "identity" : "bottomsheet",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/Kaww/BottomSheet",
+      "state" : {
+        "branch" : "main",
+        "revision" : "e26da6dc17222f0bd382512a43a5a8fa6fdd7150"
       }
-    ]
-  },
-  "version": 1
+    }
+  ],
+  "version" : 2
 }

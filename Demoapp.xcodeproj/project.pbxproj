@@ -7,13 +7,13 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		494BDC6D290DA46600645284 /* BottomSheet in Frameworks */ = {isa = PBXBuildFile; productRef = 494BDC6C290DA46600645284 /* BottomSheet */; };
 		4987120F2766860E00604A3A /* DefaultSheetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4987120E2766860E00604A3A /* DefaultSheetView.swift */; };
 		498712112766867500604A3A /* FullScreenCoverViews.swift in Sources */ = {isa = PBXBuildFile; fileRef = 498712102766867500604A3A /* FullScreenCoverViews.swift */; };
 		4987121427668C7000604A3A /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 4987121227668C7000604A3A /* README.md */; };
 		4987121527668C7000604A3A /* CONTRIBUTING.md in Resources */ = {isa = PBXBuildFile; fileRef = 4987121327668C7000604A3A /* CONTRIBUTING.md */; };
 		4987121727668E5200604A3A /* BottomSheetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4987121627668E5200604A3A /* BottomSheetView.swift */; };
 		4987121C2767EBE800604A3A /* BottomSheetUnavailableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4987121B2767EBE800604A3A /* BottomSheetUnavailableView.swift */; };
-		498712262768919A00604A3A /* BottomSheet in Frameworks */ = {isa = PBXBuildFile; productRef = 498712252768919A00604A3A /* BottomSheet */; };
 		4987122E276A702000604A3A /* UndismissableSheetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4987122D276A702000604A3A /* UndismissableSheetView.swift */; };
 		49871231276A7A3700604A3A /* Haptics.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49871230276A7A3700604A3A /* Haptics.swift */; };
 		49871234276A7A7500604A3A /* HapticsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49871233276A7A7500604A3A /* HapticsView.swift */; };
@@ -61,7 +61,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				498712262768919A00604A3A /* BottomSheet in Frameworks */,
+				494BDC6D290DA46600645284 /* BottomSheet in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -241,7 +241,7 @@
 			);
 			name = Demoapp;
 			packageProductDependencies = (
-				498712252768919A00604A3A /* BottomSheet */,
+				494BDC6C290DA46600645284 /* BottomSheet */,
 			);
 			productName = Demoapp;
 			productReference = 59235079273808D200EC2AAD /* Demoapp.app */;
@@ -272,7 +272,7 @@
 			);
 			mainGroup = 59235070273808D200EC2AAD;
 			packageReferences = (
-				498712242768919A00604A3A /* XCRemoteSwiftPackageReference "BottomSheet" */,
+				494BDC6B290DA46600645284 /* XCRemoteSwiftPackageReference "BottomSheet" */,
 			);
 			productRefGroup = 5923507A273808D200EC2AAD /* Products */;
 			projectDirPath = "";
@@ -525,7 +525,7 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
-		498712242768919A00604A3A /* XCRemoteSwiftPackageReference "BottomSheet" */ = {
+		494BDC6B290DA46600645284 /* XCRemoteSwiftPackageReference "BottomSheet" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/Kaww/BottomSheet";
 			requirement = {
@@ -536,9 +536,9 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		498712252768919A00604A3A /* BottomSheet */ = {
+		494BDC6C290DA46600645284 /* BottomSheet */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = 498712242768919A00604A3A /* XCRemoteSwiftPackageReference "BottomSheet" */;
+			package = 494BDC6B290DA46600645284 /* XCRemoteSwiftPackageReference "BottomSheet" */;
 			productName = BottomSheet;
 		};
 /* End XCSwiftPackageProductDependency section */
