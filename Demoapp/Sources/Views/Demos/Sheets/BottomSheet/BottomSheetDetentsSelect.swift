@@ -146,7 +146,7 @@ private struct BottomSheetDetentsSelectCustomValuePicker: View {
     private var isFormValid: Bool {
         switch selectedValueType {
         case .ratio:
-            return Double(value) != nil
+            return Double(value.replacingOccurrences(of: ",", with: ".")) != nil
 
         case .fixed:
             return Int(value) != nil
@@ -164,7 +164,7 @@ private struct BottomSheetDetentsSelectCustomValuePicker: View {
     }
 
     private func submitRatio(value: String) {
-        guard let doubleValue = Double(value) else { return }
+        guard let doubleValue = Double(value.replacingOccurrences(of: ",", with: ".")) else { return }
         onSubmit(.ratio(doubleValue))
         BottomSheet.dismiss()
     }
