@@ -5,11 +5,15 @@ import BottomSheet
 struct BottomSheetView: View {
 
     @State private var show = false
-    @State private var selectedDetent: BottomSheet.Detents = .mediumAndLarge
     @State private var shouldScrollExpandSheet = true
     @State private var largestUndimmedDetent: BottomSheet.LargestUndimmedDetent? = .none
     @State private var showGrabber = false
     @State private var showsInCompactHeight = false
+    @State private var dismissable = true
+
+    // Detents
+    @State private var bottomSheetDetents: [BottomSheet.Detent] = [.medium, .large]
+    @State private var selectedBottomSheetDetents: [BottomSheet.Detent] = [.medium]
 
     @State private var useCustomCornerRadius = false
     private let cornerRadiusMinValue: CGFloat = .zero
@@ -21,7 +25,8 @@ struct BottomSheetView: View {
             detentsSection
             largestUndimmedDetentSection
             scrollSection
-            compactHeightConfig
+            compactHeightConfigSection
+            dismissableSection
             grabberSection
             customRadiusSection
         }
@@ -37,12 +42,13 @@ struct BottomSheetView: View {
         .tint(.blue)
         .bottomSheet(
             isPresented: $show,
-            detents: selectedDetent,
+            detents: selectedBottomSheetDetents,
             shouldScrollExpandSheet: shouldScrollExpandSheet,
             largestUndimmedDetent: largestUndimmedDetent,
             showGrabber: showGrabber,
             cornerRadius: useCustomCornerRadius ? cornerRadius : nil,
-            showsInCompactHeight: showsInCompactHeight
+            showsInCompactHeight: showsInCompactHeight,
+            dismissable: dismissable
         ) {
             sheetContentView
         }
@@ -73,18 +79,30 @@ struct BottomSheetView: View {
 
     private var detentsSection: some View {
         Section {
-            Picker("Detents", selection: $selectedDetent) {
-                ForEach(BottomSheet.Detents.allCases) { detent in
-                    Text(detent.description)
-                        .tag(detent)
+            NavigationLink("Select detents") {
+                List {
+                    BottomSheetDetentsSelect(
+                        values: $bottomSheetDetents,
+                        selection: $selectedBottomSheetDetents
+                    )
                 }
             }
-            .pickerStyle(.menu)
         } header: {
             Text("Detents")
         } footer: {
-            Text("+ details")
+            Text(detentsFooterText)
         }
+    }
+
+    private var detentsFooterText: String {
+        var text = "Defines the heights where the sheet can rest.\n"
+        for detent in selectedBottomSheetDetents {
+            text.append("- " + detent.description)
+            if detent != selectedBottomSheetDetents.last {
+                text.append("\n")
+            }
+        }
+        return text
     }
 
     private var largestUndimmedDetentSection: some View {
@@ -118,7 +136,7 @@ struct BottomSheetView: View {
         }
     }
 
-    private var compactHeightConfig: some View {
+    private var compactHeightConfigSection: some View {
         Section {
             Toggle(isOn: $showsInCompactHeight) {
                 Text("Attach to bottom")
@@ -128,6 +146,16 @@ struct BottomSheetView: View {
         } footer: {
             Text("Determines whether the sheet attaches to the bottom edge of the screen in a compact-height size class.")
         }
+    }
+
+    private var dismissableSection: some View {
+        Section {
+            Toggle(isOn: $dismissable) {
+                Text("Dismissable")
+            }
+        } header: {
+            Text("Dismiss")
+        } footer: {}
     }
 
     private var grabberSection: some View {
