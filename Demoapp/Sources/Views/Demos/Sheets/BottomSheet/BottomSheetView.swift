@@ -9,6 +9,7 @@ struct BottomSheetView: View {
     @State private var largestUndimmedDetent: BottomSheet.LargestUndimmedDetent? = .none
     @State private var showGrabber = false
     @State private var showsInCompactHeight = false
+    @State private var showNavigationBar = true
     @State private var dismissable = true
 
     // Detents
@@ -26,6 +27,7 @@ struct BottomSheetView: View {
             largestUndimmedDetentSection
             scrollSection
             compactHeightConfigSection
+            showNavigationBarSection
             dismissableSection
             grabberSection
             customRadiusSection
@@ -48,6 +50,7 @@ struct BottomSheetView: View {
             showGrabber: showGrabber,
             cornerRadius: useCustomCornerRadius ? cornerRadius : nil,
             showsInCompactHeight: showsInCompactHeight,
+            showNavigationBar: showNavigationBar,
             dismissable: dismissable
         ) {
             sheetContentView
@@ -56,6 +59,8 @@ struct BottomSheetView: View {
             show = false
         }
     }
+
+    // MARK: Sheet Content
 
     private var sheetContentView: some View {
         List {
@@ -75,7 +80,7 @@ struct BottomSheetView: View {
         .navigationTitle(Text("Bottom sheet content"))
     }
 
-    // MARK: Sections
+    // MARK: Detents
 
     private var detentsSection: some View {
         Section {
@@ -124,6 +129,8 @@ struct BottomSheetView: View {
         }
     }
 
+    // MARK: Scroll
+
     private var scrollSection: some View {
         Section {
             Toggle(isOn: $shouldScrollExpandSheet) {
@@ -135,6 +142,8 @@ struct BottomSheetView: View {
             Text("+ details")
         }
     }
+
+    // MARK: Compact Height
 
     private var compactHeightConfigSection: some View {
         Section {
@@ -148,6 +157,8 @@ struct BottomSheetView: View {
         }
     }
 
+    // MARK: Dismiss
+
     private var dismissableSection: some View {
         Section {
             Toggle(isOn: $dismissable) {
@@ -157,6 +168,8 @@ struct BottomSheetView: View {
             Text("Dismiss")
         } footer: {}
     }
+
+    // MARK: Grabber
 
     private var grabberSection: some View {
         Section {
@@ -169,6 +182,8 @@ struct BottomSheetView: View {
             Text("+ details")
         }
     }
+
+    // MARK: Corner Radius
 
     private var customRadiusSection: some View {
         Section {
@@ -189,6 +204,20 @@ struct BottomSheetView: View {
             Text("Corner radius")
         } footer: {
             Text("+ details")
+        }
+    }
+
+    // MARK: Navigation Bar
+
+    private var showNavigationBarSection: some View {
+        Section {
+            Toggle(isOn: $showNavigationBar) {
+                Text("Show NavigationBar")
+            }
+        } header: {
+            Text("Navigation bar")
+        } footer: {
+            Text("Defines if the NavigationBar is visible or hidden in the sheet content view.")
         }
     }
 }
