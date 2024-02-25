@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		494BDC6D290DA46600645284 /* BottomSheet in Frameworks */ = {isa = PBXBuildFile; productRef = 494BDC6C290DA46600645284 /* BottomSheet */; };
 		494BDC6F290DB1AE00645284 /* BottomSheetDetentsSelect.swift in Sources */ = {isa = PBXBuildFile; fileRef = 494BDC6E290DB1AE00645284 /* BottomSheetDetentsSelect.swift */; };
+		494BDC74291016E800645284 /* SFSymbolsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 494BDC73291016E800645284 /* SFSymbolsView.swift */; };
+		494BDC762910178E00645284 /* SFSymbol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 494BDC752910178E00645284 /* SFSymbol.swift */; };
 		4987120F2766860E00604A3A /* DefaultSheetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4987120E2766860E00604A3A /* DefaultSheetView.swift */; };
 		498712112766867500604A3A /* FullScreenCoverViews.swift in Sources */ = {isa = PBXBuildFile; fileRef = 498712102766867500604A3A /* FullScreenCoverViews.swift */; };
 		4987121427668C7000604A3A /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 4987121227668C7000604A3A /* README.md */; };
@@ -34,6 +36,8 @@
 
 /* Begin PBXFileReference section */
 		494BDC6E290DB1AE00645284 /* BottomSheetDetentsSelect.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BottomSheetDetentsSelect.swift; sourceTree = "<group>"; };
+		494BDC73291016E800645284 /* SFSymbolsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SFSymbolsView.swift; sourceTree = "<group>"; };
+		494BDC752910178E00645284 /* SFSymbol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SFSymbol.swift; sourceTree = "<group>"; };
 		4987120E2766860E00604A3A /* DefaultSheetView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultSheetView.swift; sourceTree = "<group>"; };
 		498712102766867500604A3A /* FullScreenCoverViews.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FullScreenCoverViews.swift; sourceTree = "<group>"; };
 		4987121227668C7000604A3A /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
@@ -70,6 +74,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		494BDC72291016CF00645284 /* SFSymbols */ = {
+			isa = PBXGroup;
+			children = (
+				494BDC73291016E800645284 /* SFSymbolsView.swift */,
+				494BDC752910178E00645284 /* SFSymbol.swift */,
+			);
+			path = SFSymbols;
+			sourceTree = "<group>";
+		};
 		4987120C27667E8800604A3A /* Sheets */ = {
 			isa = PBXGroup;
 			children = (
@@ -113,6 +126,7 @@
 				4987120C27667E8800604A3A /* Sheets */,
 				596920B12739CE020098D092 /* SpringAnimations */,
 				49871232276A7A5F00604A3A /* Haptics */,
+				494BDC72291016CF00645284 /* SFSymbols */,
 			);
 			path = Demos;
 			sourceTree = "<group>";
@@ -321,6 +335,8 @@
 				5956BD35273819870085F0B0 /* SpringAnimationsView.swift in Sources */,
 				596920B5273B074A0098D092 /* SpringAnimationControlPanelSettings.swift in Sources */,
 				49871231276A7A3700604A3A /* Haptics.swift in Sources */,
+				494BDC762910178E00645284 /* SFSymbol.swift in Sources */,
+				494BDC74291016E800645284 /* SFSymbolsView.swift in Sources */,
 				4987121727668E5200604A3A /* BottomSheetView.swift in Sources */,
 				5923507D273808D200EC2AAD /* DemoappApp.swift in Sources */,
 			);

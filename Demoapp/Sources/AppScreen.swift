@@ -22,6 +22,7 @@ struct DemosListView: View {
             sheetsSection
             animationsSection
             hapticsSection
+            resourcesSection
             willBeAddedSoonLabel
         }
         .navigationTitle(Text("Demoapp (:"))
@@ -54,12 +55,14 @@ struct DemosListView: View {
                 Label("Full screen cover", systemImage: "doc.plaintext.fill")
             }
 
-            if #available(iOS 15, *) {
-                NavigationLink(destination: BottomSheetView()) {
-                    Label("Bottom sheet", systemImage: "rectangle.portrait.bottomhalf.inset.filled")
+            NavigationLink {
+                if #available(iOS 15, *) {
+                    BottomSheetView()
+                } else {
+                    BottomSheetUnavailableView()
                 }
-            } else {
-                BottomSheetUnavailableView()
+            } label: {
+                Label("Bottom sheet", systemImage: "rectangle.portrait.bottomhalf.inset.filled")
             }
         } header: {
             Text("Sheets, navigation, ...")
@@ -69,8 +72,12 @@ struct DemosListView: View {
     private var animationsSection: some View {
         Section {
             NavigationLink(destination: SpringAnimationsView()) {
-                Label("Spring", systemImage: "tornado")
-                    .accentColor(.orange)
+                Label {
+                    Text("Spring")
+                } icon: {
+                    Image(systemName: "tornado")
+                        .foregroundColor(.orange)
+                }
             }
         } header: {
             Text("Animations")
@@ -80,11 +87,30 @@ struct DemosListView: View {
     private var hapticsSection: some View {
         Section {
             NavigationLink(destination: HapticsView()) {
-                Label("Haptics and vibrations", systemImage: "hand.tap.fill")
-                    .accentColor(.purple)
+                Label {
+                    Text("Haptics and vibrations")
+                } icon: {
+                    Image(systemName: "hand.tap.fill")
+                        .foregroundColor(.purple)
+                }
             }
         } header: {
             Text("Sensors")
+        }
+    }
+
+    private var resourcesSection: some View {
+        Section {
+            NavigationLink(destination: SFSymbolsView()) {
+                Label {
+                    Text("SF Symbols")
+                } icon: {
+                    Image(systemName: "photo.stack")
+                        .foregroundColor(.green)
+                }
+            }
+        } header: {
+            Text("Resources")
         }
     }
 

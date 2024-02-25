@@ -18,6 +18,8 @@ It's an app built in SwiftUI that will help UI/UX designers and iOS developpers 
 
 ## 📱 MVP / V1.0
 
+<img src="./Demoapp/Resources/screenshots.png">
+
 ### 🚀 features
 
 - iOS capabilities manipulations

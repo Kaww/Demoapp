@@ -43,17 +43,17 @@ struct HapticsView: View {
         Section {
             Button(action: { haptics.notification.notify(.success) }) {
                 Label("Success", systemImage: "checkmark.circle.fill")
-                    .accentColor(.green)
+                    .foregroundColor(.green)
             }
 
             Button(action: { haptics.notification.notify(.warning) }) {
                 Label("Warning", systemImage: "exclamationmark.triangle.fill")
-                    .accentColor(.orange)
+                    .foregroundColor(.orange)
             }
 
             Button(action: { haptics.notification.notify(.error) }) {
                 Label("Error", systemImage: "multiply.square.fill")
-                    .accentColor(.red)
+                    .foregroundColor(.red)
             }
         } header: {
             Text("Notifications")
